@@ -1,0 +1,16 @@
+---
+export interface Props{
+    items : string[];
+}
+
+const {items} = Astro.props;
+
+---
+
+<div>
+    <ul>
+        {items.map((item) => (
+            <li>{item}</li>
+           ))}
+    </ul>
+</div>
