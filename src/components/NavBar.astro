@@ -7,10 +7,50 @@ const {items} = Astro.props;
 
 ---
 
-<div>
-    <ul>
+<nav class="navbar">
+    <ul class="navbar-menu">
         {items.map((item) => (
-            <li>{item}</li>
+            <li class="navbar-item"><a class="navbar-link" href={`#${item.toUpperCase()}`}>{item.toUpperCase()}</a></li>
            ))}
     </ul>
-</div>
+</nav>
+
+<style>
+    .navbar {
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.navbar-logo {
+  font-size: 24px;
+}
+
+.navbar-brand {
+  color: #fff;
+  text-decoration: none;
+}
+
+.navbar-menu {
+  list-style: none;
+  display: flex;
+}
+
+.navbar-item {
+  margin-left: 20px;
+}
+
+.navbar-link {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.navbar-link:hover {
+  color: #00ff99;
+}
+
+</style>
