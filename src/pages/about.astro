@@ -6,5 +6,127 @@ import NavBar from "../components/NavBar.astro";
 import Title  from "../components/Title.astro";
 ---
 
+<header class="header">
+    <div class="header-logo">Logo</div>
+    <nav class="header-nav">
+      <div class="header-nav-item">Inicio</div>
+      <div class="header-nav-item">Acerca</div>
+      <div class="header-nav-item">Contacto</div>
+    </nav>
+  </header>
 
-<NavBar items={["a","b", "c"]} />
+  <div class="container">
+    <main class="main-content">
+      <h1 class="main-title">Título principal</h1>
+      <p class="main-description">Descripción del contenido principal.</p>
+
+      <div class="card">
+        <h2 class="card-title">Tarjeta 1</h2>
+        <p class="card-content">Contenido de la tarjeta 1.</p>
+      </div>
+
+      <div class="card">
+        <h2 class="card-title">Tarjeta 2</h2>
+        <p class="card-content">Contenido de la tarjeta 2.</p>
+      </div>
+    </main>
+  </div>
+
+  <footer class="footer">
+    &copy; 2023 Nombre de la empresa. Todos los derechos reservados.
+  </footer>
+
+<style>
+    /* Estilos generales */
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
+
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f7f9fc;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Encabezado */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.header-logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.header-nav {
+  display: flex;
+  gap: 20px;
+}
+
+.header-nav-item {
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.header-nav-item:hover {
+  color: #0070f3;
+}
+
+/* Contenido principal */
+.main-content {
+  padding: 20px 0;
+}
+
+.main-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.main-description {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.card-content {
+  font-size: 16px;
+  color: #666;
+}
+
+/* Pie de página */
+.footer {
+  text-align: center;
+  padding: 20px 0;
+  background-color: #f7f9fc;
+  border-top: 1px solid #ccc;
+  font-size: 14px;
+  color: #666;
+}
+
+</style>
