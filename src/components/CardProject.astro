@@ -2,17 +2,16 @@
 export interface Props {
 	title: string;
 	body: string;
-	href: string;
     img: string
 }
 
-const { href, title, body, img } = Astro.props;
+const { title, body, img } = Astro.props;
 ---
 
 
 <div class="card">
     <h2 class="card-title">{title}</h2>
-    <img src="ruta-de-la-imagen.jpg" alt="Imagen del proyecto" class="card-image">
+    <img src={img} alt="Imagen del proyecto" class="card-image">
     <p class="card-description">{body}</p>
     <a href="#" class="card-link">Ver más</a>
     <div class="card-footer">
@@ -24,4 +23,68 @@ const { href, title, body, img } = Astro.props;
       <span class="date">Fecha de publicación</span>
     </div>
   </div>
+
+
+<style>
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    background-color: #f8f8f8;
+  }
   
+  .card-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .card-description {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+  
+  .card-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  
+  .card-link {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .card-link:hover {
+    text-decoration: underline;
+  }
+  
+  .card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .card-footer .tags {
+    display: flex;
+  }
+  
+  .card-footer .tags .tag {
+    margin-right: 5px;
+    padding: 5px 10px;
+    font-size: 12px;
+    background-color: #eaeaea;
+    border-radius: 3px;
+  }
+  
+  .card-footer .date {
+    font-size: 12px;
+    color: #666;
+  }
+  
+  
+</style>
